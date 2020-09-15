@@ -36,6 +36,8 @@ public class Customer {
                         thisAmount += (each.getDaysRented() - 3) * 1.5;
                     break;
             }
+            
+            
 
             // add frequent renter points
             frequentRenterPoints ++;
