@@ -66,18 +66,28 @@ public class Customer {
         //result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         //result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         
-        // After extract variable
-        String footer1 = "Amount owed is " + String.valueOf(totalAmount) + "\n";
-		String footer2 = "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
-		result += footer1;
-		result += footer2;
+        // After extract variable, before extract method:
+        //String footer1 = "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		//String footer2 = "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+		//String footer = footer1 + footer2;
+		//result += footer;
+		
+		// After extract method:
+        result += footer(totalAmount, frequentRenterPoints);
+
         
         return result;
     }
 
     // Added after performing extract method
-	private String header(String name) {
-		return "Rental Record for " + name + "\n";
+    private String header(String name) {
+    	return "Rental Record for " + name + "\n";
+    }
+
+	private String footer(double totalAmount, int frequentRenterPoints) {
+		String footer1 = "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		String footer2 = "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+		return footer1 + footer2;
 	}
 
     public void addRental(Rental arg) {
