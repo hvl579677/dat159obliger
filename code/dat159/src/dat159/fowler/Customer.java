@@ -39,7 +39,6 @@ public class Customer {
             
             
             
-            
             // add frequent renter points
             frequentRenterPoints ++;
             // add bonus for a two day new release rental
