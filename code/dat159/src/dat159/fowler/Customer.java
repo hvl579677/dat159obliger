@@ -15,11 +15,21 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n";
+        
+        String name = getName();
+        // Before extract method:
+        // String result = "Rental Record for " + name + "\n";
+        
+        //After extract method:
+        String result = header(name);
+        
+        
         while (rentals.hasMoreElements()) {
-            double thisAmount = 0;
-            Rental each = (Rental) rentals.nextElement();
 
+        	Rental each = (Rental) rentals.nextElement();
+
+            double thisAmount = 0;
+            
             // determine amount for each line
             switch (each.getMovie().getPriceCode()) {
                 case Movie.REGULAR:
@@ -51,11 +61,24 @@ public class Customer {
             totalAmount += thisAmount;
         }
         //add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) +
-                " frequent renter points";
+        
+        // Before extract variable:
+        //result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        //result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        
+        // After extract variable
+        String footer1 = "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		String footer2 = "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+		result += footer1;
+		result += footer2;
+        
         return result;
     }
+
+    // Added after performing extract method
+	private String header(String name) {
+		return "Rental Record for " + name + "\n";
+	}
 
     public void addRental(Rental arg) {
         _rentals.addElement(arg);
