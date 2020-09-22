@@ -1,7 +1,5 @@
 package dat159.fowler;
 
-
-
 public class Movie {
 	public static final int CHILDRENS = 2;
 	public static final int REGULAR = 0;
@@ -11,25 +9,24 @@ public class Movie {
 	private int _priceCode;
 	private Price _price;
 
-
 	public Movie(String title, int priceCode) {
 		_title = title;
-		_priceCode = priceCode;
+		_price = new Price(_priceCode);
 	}
 
 	public int getPriceCode() {
-		return _priceCode;
+		return _price.priceCode();
 	}
 
-	public void setPriceCode(int _priceCode) {
-		this._priceCode = _priceCode;
+	public void setPriceCode(int arg) {
+		_price = new Price(_priceCode);
 	}
 
 	public String getTitle() {
 		return _title;
 	}
 
-	private double amount(int daysRented) {
+	public double amount(int daysRented) {
 		double thisAmount = 0;
 		switch (getPriceCode()) {
 		case REGULAR:
