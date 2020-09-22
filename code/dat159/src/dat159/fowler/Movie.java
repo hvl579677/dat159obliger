@@ -44,6 +44,6 @@ public class Movie {
 				thisAmount += (daysRented - 3) * 1.5;
 			break;
 		}
-		return thisAmount;
+		return thisAmount; 
 	}
 }
