@@ -14,4 +14,8 @@ public abstract class Price {
 
 	abstract double amount(int daysRented);
 
+	int renterPoints(int daysRented) {
+		return 1;
+	}
+
 }

@@ -29,4 +29,8 @@ public class Movie {
 		return _price.amount(daysRented);
 	}
 
+	public int renterPoints(int daysRented) {
+		return _price.renterPoints(daysRented);
+	}
+
 }

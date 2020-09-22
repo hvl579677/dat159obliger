@@ -48,14 +48,11 @@ public class Customer {
 	}
 
 	private int frequentRenterPoints(List<Rental> myRentals1) {
-		int frequentRenterPoints = 0;
+		int totalRenterPoints = 0;
 		for (Rental each : myRentals1) {
-			frequentRenterPoints++;
-
-			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
-				frequentRenterPoints++;
+			totalRenterPoints += each.renterPoints(each.getDaysRented());
 		}
-		return frequentRenterPoints;
+		return totalRenterPoints;
 	}
 
 	// Added after performing extract method
@@ -64,7 +61,7 @@ public class Customer {
 	}
 
 	private String footer(double totalAmount, int frequentRenterPoints) {
-		String footer1 = "Amount owed is " + String.valueOf(totalAmount) + "\n";
+		String footer1 = "You owed " + String.valueOf(totalAmount) + "\n";
 		String footer2 = "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 		return footer1 + footer2;
 	}
