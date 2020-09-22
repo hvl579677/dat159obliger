@@ -9,6 +9,8 @@ public class Movie {
 
 	private String _title;
 	private int _priceCode;
+	private Price _price;
+
 
 	public Movie(String title, int priceCode) {
 		_title = title;
@@ -32,8 +34,8 @@ public class Movie {
 		switch (getPriceCode()) {
 		case REGULAR:
 			thisAmount += 2;
-			if (daysRented() > 2)
-				thisAmount += (daysRented() - 2) * 1.5;
+			if (daysRented > 2)
+				thisAmount += (daysRented - 2) * 1.5;
 			break;
 		case NEW_RELEASE:
 			thisAmount += daysRented * 3;
@@ -44,6 +46,6 @@ public class Movie {
 				thisAmount += (daysRented - 3) * 1.5;
 			break;
 		}
-		return thisAmount; 
+		return thisAmount;
 	}
 }
