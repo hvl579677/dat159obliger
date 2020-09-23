@@ -30,9 +30,7 @@ public class Customer {
 		}
 
 		double totalAmount = totalAmount(this.myRentals);
-
 		int frequentRenterPoints = frequentRenterPoints(this.myRentals);
-
 		result += footer(totalAmount, frequentRenterPoints);
 
 		return result;
