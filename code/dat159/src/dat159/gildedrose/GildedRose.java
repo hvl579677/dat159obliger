@@ -18,7 +18,6 @@ class GildedRose {
 		case "Aged Brie":
 			if (item.quality < 50) {
 				item.quality = item.quality + 1;
-
 			}
 
 			item.sellIn = item.sellIn - 1;
