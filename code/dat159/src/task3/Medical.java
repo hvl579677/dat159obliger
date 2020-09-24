@@ -1,10 +1,9 @@
 package task3;
 
-public class Medical extends Unit {
+public class Medical extends Intermediate {
 
 	public Medical(String name) {
-		super();
+		super(name);
 		this.name = name;
 	}
-
 }
