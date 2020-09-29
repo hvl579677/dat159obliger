@@ -5,10 +5,6 @@ public class B extends A {
 		return 2;
 	}
 	
-	public int m() {
-		return super.k();
-	}
-	
 	public int test() {
 		return m();
 	}
