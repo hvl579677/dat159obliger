@@ -9,12 +9,14 @@ class GildedRose {
 
 	public void updateQuality() {
 		for (int i = 0; i < items.length; i++) {
+			// Inline variable
 			doUpdateQuality(items[i]);
 		}
 	}
 
 	private void doUpdateQuality(Item item) {
 		switch (item.name) {
+		
 		case "Aged Brie":
 			if (item.quality < 50) {
 				item.quality = item.quality + 1;
@@ -28,6 +30,7 @@ class GildedRose {
 				}
 			}
 			break;
+			
 		case "Backstage passes to a TAFKAL80ETC concert":
 			if (item.quality < 50) {
 				item.quality = item.quality + 1;
