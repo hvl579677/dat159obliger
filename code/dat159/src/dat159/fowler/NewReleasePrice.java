@@ -17,9 +17,8 @@ public class NewReleasePrice extends Price {
 		} else {
 			thisRenterPoints = 1;
 		}
-		
+
 		return thisRenterPoints;
-//		return daysRented > 1 ? 2 : 1;
 	}
 
 }

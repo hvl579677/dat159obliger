@@ -28,5 +28,4 @@ public class Movie {
 	public int renterPoints(int daysRented) {
 		return _price.renterPoints(daysRented);
 	}
-
 }
